@@ -1,0 +1,23 @@
+---
+const { frontmatter } = Astro.props;
+const dateOptions: Intl.DateTimeFormatOptions = {
+  weekday: "long",
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+};
+---
+
+<h1>{frontmatter.title}</h1>
+<p>Written by {frontmatter.author}</p>
+<p><em>{frontmatter.description}</em></p>
+<p>
+  Published on: {
+    new Date(frontmatter.pubDate).toLocaleDateString(undefined, dateOptions)
+  }
+</p>
+<ul>
+  {frontmatter.tags.map((tag) => <li>{tag}</li>)}
+</ul>
+<img src={frontmatter.image.url} alt={frontmatter.image.alt} width="300" />
+<slot />
