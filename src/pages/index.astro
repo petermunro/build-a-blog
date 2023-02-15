@@ -1,8 +1,19 @@
 ---
+import Greeting from "../components/Greeting";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Home";
+const messages = [
+  "Hi",
+  "Hello",
+  "Howdy",
+  "Wilkommen",
+  "Groetjes",
+  "Bonjour",
+  "Ciao",
+];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <h2>My awesome bog subtitle</h2>
+  <Greeting messages={messages} client:load />
 </BaseLayout>

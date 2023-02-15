@@ -10,7 +10,9 @@
 		"astro": "astro"
 	},
 	"dependencies": {
+		"@astrojs/preact": "^2.0.3",
 		"@astrojs/rss": "^2.1.0",
-		"astro": "^2.0.10"
+		"astro": "^2.0.10",
+		"preact": "^10.12.1"
 	}
 }
